@@ -25,7 +25,7 @@ base {
 }
 
 java {
-    toolchain.languageVersion = JavaLanguageVersion.of(8)
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
 }
 
 minecraft {
@@ -66,14 +66,15 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven { url "https://maven.blamejared.com/" }
+    maven { url "https://cursemaven.com" }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    compileOnly fg.deobf("vazkii.psi:Psi:${psi_version}")
-    runtimeOnly fg.deobf("vazkii.psi:Psi:${psi_version}")
+    compileOnly fg.deobf("curse.maven:psi-241665:${psi_cursemaven_tag}")
+    runtimeOnly fg.deobf("curse.maven:psi-241665:${psi_cursemaven_tag}")
 
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
 }

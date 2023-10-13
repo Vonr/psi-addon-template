@@ -2,7 +2,7 @@ package dev.qther.psi_addon_template.spell.trick;
 
 import dev.qther.psi_addon_template.annotations.PieceMetadata;
 import dev.qther.psi_addon_template.spell.ModPieces;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.network.chat.TextComponent;
 import vazkii.psi.api.spell.Spell;
 import vazkii.psi.api.spell.SpellContext;
 import vazkii.psi.api.spell.SpellRuntimeException;
@@ -17,7 +17,7 @@ public class PieceTrickTest extends PieceTrick {
     @Override
     @SuppressWarnings("deprecation")
     public Object execute(SpellContext context) throws SpellRuntimeException {
-        context.caster.sendMessage(new StringTextComponent("Test"), context.caster.getUUID());
+        context.caster.sendMessage(new TextComponent("Test"), context.caster.getUUID());
         return null;
     }
 }
